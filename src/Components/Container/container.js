@@ -1,9 +1,53 @@
 import React from "react";
+import "./container.css";
+import Card from "./card";
 
+function Container() {
+  return (
+    <>
+      <div>
+        <h1>Image Search App</h1>
+        <form action="">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search for images"
+          />
+          <button id="search-button">Search</button>
+        </form>
+        <div className="search-results">
+          <Card
+            url={
+              "https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            }
+            alt={"coffee and more."}
+            imagehref={"https://unsplash.com/photos/lsdA8QpWN_A"}
+            anchortext={"Coffee and More."}
+          />
+          <Card
+            url={
+              "https://images.unsplash.com/photo-1683009427042-e094996f9780?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxMXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            }
+            imagename={"Explore Nature."}
+            imagehref={"https://unsplash.com/photos/lrhF4w-KKjA"}
+            anchortext={"Explore Nature."}
+          />
 
-function Container(){
-    return(<>
-    </>);
+          <Card
+            url={
+              "https://images.unsplash.com/photo-1690537371861-8f047b7eaa21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMnx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            }
+            imagename={"Motivational."}
+            imagehref={
+              "https://unsplash.com/photos/a-sign-that-says-today-will-be-a-good-day-GtKEIICYtGc"
+            }
+            anchortext={"Motivational."}
+          />
+        </div>
+      </div>
+      <button id="show-more-button">Show More</button>
+    </>
+  );
 }
 
 export default Container;

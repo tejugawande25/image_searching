@@ -1,0 +1,41 @@
+.search-result{
+    margin-bottom: 60px;
+    width: 30%;
+    height: 100%;
+    box-shadow: 0 0 6px rgb(0,0,0,0.2);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.search-result img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: opacity 0.2s ease-in-out;
+}
+.search-result:hover img{
+    opacity: 0.8;
+}
+
+/* targeting the anchor tags in the code*/
+.search-result a{
+    font-size: 20px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding:10px;
+    text-transform: capitalize;
+}
+@media  screen and (max-width: 768px) {
+    .search-result{
+        padding: 20px;
+    }
+    .search-result{
+        width: 45%;
+    }
+}
+@media  screen and (max-width: 480px) {
+    .search-result{
+        width: 100%;
+    }
+}
