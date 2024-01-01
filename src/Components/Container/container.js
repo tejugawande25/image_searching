@@ -30,7 +30,7 @@ function Container() {
           />
           <Card
             url={
-              "https://images.unsplash.com/photo-1683009427042-e094996f9780?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxMXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+              "https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=600"
             }
             imagename={"Explore Nature."}
             imagehref={"https://unsplash.com/photos/lrhF4w-KKjA"}
