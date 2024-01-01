@@ -25,7 +25,7 @@ function Container() {
               "https://images.pexels.com/photos/414630/pexels-photo-414630.jpeg?auto=compress&cs=tinysrgb&w=600"
             }
             alt={"coffee and more."}
-            imagehref={"https://images.pexels.com/photos/414630/pexels-photo-414630.jpeg?auto=compress&cs=tinysrgb&w=600"}
+            imagehref={"https://www.pexels.com/photo/person-sitting-facing-laptop-computer-with-sketch-pad-57690/"}
             anchortext={"Coffee and More."}
           />
           <Card
