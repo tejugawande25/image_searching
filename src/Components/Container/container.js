@@ -3,9 +3,13 @@ import "./container.css";
 import Card from "./card";
 
 function Container() {
+  function onSearchClick(){
+
+  }
+
   return (
     <>
-      <div>
+      <div className="container">
         <h1>Image Search App</h1>
         <form action="">
           <input
@@ -13,12 +17,12 @@ function Container() {
             id="search-input"
             placeholder="Search for images"
           />
-          <button id="search-button">Search</button>
+          <button id="search-button" onClick={onSearchClick}>Search</button>
         </form>
         <div className="search-results">
           <Card
             url={
-              "https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+              "https://images.pexels.com/photos/414630/pexels-photo-414630.jpeg?auto=compress&cs=tinysrgb&w=600"
             }
             alt={"coffee and more."}
             imagehref={"https://unsplash.com/photos/lsdA8QpWN_A"}
@@ -45,7 +49,7 @@ function Container() {
           />
         </div>
       </div>
-      <button id="show-more-button">Show More</button>
+      <button id="show-more-button" >Show More</button>
     </>
   );
 }
