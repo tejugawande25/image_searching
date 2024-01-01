@@ -25,7 +25,7 @@ function Container() {
               "https://images.pexels.com/photos/414630/pexels-photo-414630.jpeg?auto=compress&cs=tinysrgb&w=600"
             }
             alt={"coffee and more."}
-            imagehref={"https://unsplash.com/photos/lsdA8QpWN_A"}
+            imagehref={"https://images.pexels.com/photos/414630/pexels-photo-414630.jpeg?auto=compress&cs=tinysrgb&w=600"}
             anchortext={"Coffee and More."}
           />
           <Card
@@ -33,17 +33,17 @@ function Container() {
               "https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=600"
             }
             imagename={"Explore Nature."}
-            imagehref={"https://unsplash.com/photos/lrhF4w-KKjA"}
+            imagehref={"https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=600"}
             anchortext={"Explore Nature."}
           />
 
           <Card
             url={
-              "https://images.unsplash.com/photo-1690537371861-8f047b7eaa21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMnx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+             "https://images.pexels.com/photos/5707491/pexels-photo-5707491.jpeg?auto=compress&cs=tinysrgb&w=600"
             }
             imagename={"Motivational."}
             imagehref={
-              "https://unsplash.com/photos/a-sign-that-says-today-will-be-a-good-day-GtKEIICYtGc"
+              "https://images.pexels.com/photos/5707491/pexels-photo-5707491.jpeg?auto=compress&cs=tinysrgb&w=600"
             }
             anchortext={"Motivational."}
           />
