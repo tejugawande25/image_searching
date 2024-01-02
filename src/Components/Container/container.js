@@ -33,7 +33,7 @@ function Container() {
               "https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=600"
             }
             imagename={"Explore Nature."}
-            imagehref={"https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=600"}
+            imagehref={"https://www.pexels.com/photo/three-men-standing-near-waterfalls-2387873/"}
             anchortext={"Explore Nature."}
           />
 
