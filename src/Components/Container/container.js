@@ -1,23 +1,24 @@
 import React from "react";
 import "./container.css";
 import Card from "./card";
+import axios from "axios";
 
 function Container() {
-  function onSearchClick(){
-
-  }
+  
 
   return (
     <>
       <div className="container">
-        <h1>Image Search App</h1>
+       <div className="header-section">
+        <h1>Image Search</h1>
+        </div>
         <form action="">
           <input
             type="text"
             id="search-input"
             placeholder="Search for images"
           />
-          <button id="search-button" onClick={onSearchClick}>Search</button>
+          <button id="search-button" >Search</button>
         </form>
         <div className="search-results">
           <Card
@@ -39,11 +40,11 @@ function Container() {
 
           <Card
             url={
-             "https://images.pexels.com/photos/5707491/pexels-photo-5707491.jpeg?auto=compress&cs=tinysrgb&w=600"
+             "https://images.pexels.com/photos/6230963/pexels-photo-6230963.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             }
             imagename={"Motivational."}
             imagehref={
-              "https://images.pexels.com/photos/5707491/pexels-photo-5707491.jpeg?auto=compress&cs=tinysrgb&w=600"
+              "https://www.pexels.com/photo/close-up-shot-of-scrabble-tiles-on-a-white-surface-6230963/"
             }
             anchortext={"Motivational."}
           />
