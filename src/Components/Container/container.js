@@ -1,10 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./container.css";
 import Card from "./card";
 import axios from "axios";
 
 function Container() {
   
+  const[myData ,setMyData] = useState([]);
+  const[inputData, setInputData] = useState("");
+  const[finalData , setFinalData] = useState("");
+   
+  
+  const handleInputChange =(event) =>{
+    setInputData(event.target.value);
+  }
+
+  const handleSubmit =(event) =>{
+    event.preventDefault();
+    setFinalData(inputData);
+    
+  }
+
+  useEffect(() =>{
+    axios({
+      method:"get",
+      url:`https://api.pexels.com/v1/search?query=${finalData}`,
+      headers:{
+        Authorization:"q2XWLhddx9CAJ69S46dWuJyAfCXizDG4FLdRlUwhhb9FHra0oCQ3Iark",
+      },
+    })
+    .then((res) =>{
+      console.log(res.data);
+      setMyData(res.data.photos);
+    }).catch((error) =>{
+      console.log(error);
+    })
+  },[handleSubmit])
 
   return (
     <>
@@ -12,11 +42,12 @@ function Container() {
        <div className="header-section">
         <h1>Image Search</h1>
         </div>
-        <form action="">
+        <form onClick={handleSubmit}>
           <input
             type="text"
             id="search-input"
             placeholder="Search for images"
+            onChange={handleInputChange}
           />
           <button id="search-button" >Search</button>
         </form>
