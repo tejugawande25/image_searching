@@ -18,7 +18,7 @@ form{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     margin-top: 50px;
 }
 #search-input{
@@ -31,10 +31,13 @@ form{
     font-size: 18px;
     color: #333;
 }
+input[type="search"]::-webkit-search-cancel-button{
+   -webkit-appearance: none;
+}
 
 #search-button{
     padding: 10px 20px;
-    background-color: #138065;
+    background-color: #51766d;
     border: none;
     color: #fff;
     font-size: 18px;
@@ -71,3 +74,9 @@ form{
 }
 
 /*  here we are making your web page responsive*/
+.paragraph{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(82, 78, 78);
+    text-align: center;
+}

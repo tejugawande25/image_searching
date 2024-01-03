@@ -7,23 +7,13 @@ function Container() {
   
   const[myData ,setMyData] = useState([]);
   const[inputData, setInputData] = useState("");
-  const[finalData , setFinalData] = useState("");
-   
   
-  const handleInputChange =(event) =>{
-    setInputData(event.target.value);
-  }
 
   const handleSubmit =(event) =>{
     event.preventDefault();
-    setFinalData(inputData);
-    
-  }
-
-  useEffect(() =>{
     axios({
       method:"get",
-      url:`https://api.pexels.com/v1/search?query=${finalData}`,
+      url:inputData === ""?"https://api.pexels.com/v1/curated":`https://api.pexels.com/v1/search?query=${inputData}`,
       headers:{
         Authorization:"q2XWLhddx9CAJ69S46dWuJyAfCXizDG4FLdRlUwhhb9FHra0oCQ3Iark",
       },
@@ -34,7 +24,30 @@ function Container() {
     }).catch((error) =>{
       console.log(error);
     })
-  },[handleSubmit])
+    
+  }
+
+  useEffect(() =>{
+    if(inputData === "")
+    axios({
+      method:"get",
+      url:"https://api.pexels.com/v1/curated",
+      headers:{
+        Authorization:"q2XWLhddx9CAJ69S46dWuJyAfCXizDG4FLdRlUwhhb9FHra0oCQ3Iark",
+      },
+    })
+    .then((res) =>{
+      console.log(res.data);
+      setMyData(res.data.photos);
+    }).catch((error) =>{
+      console.log(error);
+    })
+  },[inputData])
+
+  //show more button
+  const handleShowMore = (event) =>{
+      
+  }
 
   return (
     <>
@@ -44,45 +57,26 @@ function Container() {
         </div>
         <form onClick={handleSubmit}>
           <input
-            type="text"
+            type="search"
             id="search-input"
             placeholder="Search for images"
-            onChange={handleInputChange}
+            onSubmit={handleSubmit}
+            onChange={(e)=>{
+              setInputData(e.target.value)
+            }}
+            value={inputData}
           />
-          <button id="search-button" >Search</button>
+          <button id="search-button" onClick={handleSubmit} >Search</button>
         </form>
+       
+        {inputData.length > 0 && <p className="paragraph">Here is the result for {inputData}!</p>}
         <div className="search-results">
           
-          <Card
-            url={
-              "https://images.pexels.com/photos/414630/pexels-photo-414630.jpeg?auto=compress&cs=tinysrgb&w=600"
-            }
-            alt={"coffee and more."}
-            imagehref={"https://www.pexels.com/photo/person-sitting-facing-laptop-computer-with-sketch-pad-57690/"}
-            anchortext={"Coffee and More."}
-          />
-          <Card
-            url={
-              "https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=600"
-            }
-            imagename={"Explore Nature."}
-            imagehref={"https://www.pexels.com/photo/three-men-standing-near-waterfalls-2387873/"}
-            anchortext={"Explore Nature."}
-          />
-
-          <Card
-            url={
-             "https://images.pexels.com/photos/6230963/pexels-photo-6230963.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            }
-            imagename={"Motivational."}
-            imagehref={
-              "https://www.pexels.com/photo/close-up-shot-of-scrabble-tiles-on-a-white-surface-6230963/"
-            }
-            anchortext={"Motivational."}
-          /> 
+        
           {myData.map((item,index) =>{
             return(
               <Card 
+              key={`${index}-hb`}
               url={item.src.medium}
               alt={item.id}
               imageKey={index}
@@ -92,7 +86,7 @@ function Container() {
           })}
         </div>
       </div>
-      <button id="show-more-button" >Show More</button>
+      <button id="show-more-button" onClick={handleShowMore} >Show More</button>
     </>
   );
 }
