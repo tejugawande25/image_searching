@@ -85,7 +85,7 @@ function Container() {
             )
           })}
         </div><div className="show-more-container">
-        <button className="show-more" onClick={handleShowMore}>Show More.</button></div>
+        <button className="show-more" >Show More.</button></div>
       </div>
      
     </>
