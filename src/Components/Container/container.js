@@ -52,6 +52,7 @@ function Container() {
           <button id="search-button" >Search</button>
         </form>
         <div className="search-results">
+          
           <Card
             url={
               "https://images.pexels.com/photos/414630/pexels-photo-414630.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -78,7 +79,17 @@ function Container() {
               "https://www.pexels.com/photo/close-up-shot-of-scrabble-tiles-on-a-white-surface-6230963/"
             }
             anchortext={"Motivational."}
-          />
+          /> 
+          {myData.map((item,index) =>{
+            return(
+              <Card 
+              url={item.src.medium}
+              alt={item.id}
+              imageKey={index}
+              anchortext={item.alt}
+              />
+            )
+          })}
         </div>
       </div>
       <button id="show-more-button" >Show More</button>
