@@ -6,6 +6,7 @@ import axios from "axios";
 function Container() {
   
   const[myData ,setMyData] = useState([]);
+  const[page , setPage] = useState(1);
   const[inputData, setInputData] = useState("");
   
 
@@ -13,7 +14,7 @@ function Container() {
     event.preventDefault();
     axios({
       method:"get",
-      url:inputData === ""?"https://api.pexels.com/v1/curated":`https://api.pexels.com/v1/search?query=${inputData}`,
+      url:inputData === ""?"https://api.pexels.com/v1/curated":`https://api.pexels.com/v1/search?query=${inputData}&page=${page}`,
       headers:{
         Authorization:"q2XWLhddx9CAJ69S46dWuJyAfCXizDG4FLdRlUwhhb9FHra0oCQ3Iark",
       },
@@ -45,10 +46,6 @@ function Container() {
   },[inputData])
 
   //show more button
-  const handleShowMore = (event) =>{
-      
-  }
-
   return (
     <>
       <div className="container">
@@ -66,10 +63,13 @@ function Container() {
             }}
             value={inputData}
           />
+         
           <button id="search-button" onClick={handleSubmit} >Search</button>
         </form>
        
+       
         {inputData.length > 0 && <p className="paragraph">Here is the result for {inputData}!</p>}
+       
         <div className="search-results">
           
         
@@ -84,9 +84,10 @@ function Container() {
               />
             )
           })}
-        </div>
+        </div><div className="show-more-container">
+        <button className="show-more" onClick={handleShowMore}>Show More.</button></div>
       </div>
-      <button id="show-more-button" onClick={handleShowMore} >Show More</button>
+     
     </>
   );
 }
