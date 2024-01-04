@@ -6,10 +6,11 @@ import axios from "axios";
 function Container() {
   
   const[myData ,setMyData] = useState([]);
-  const[page , setPage] = useState(1);
-  const[inputData, setInputData] = useState("");
+  const[page ,setPage] = useState(1);
+  const[inputData ,setInputData] = useState("");
   
 
+  {console.log(page)}
   const handleSubmit =(event) =>{
     event.preventDefault();
     axios({
@@ -27,7 +28,7 @@ function Container() {
     })
     
   }
-
+ 
   useEffect(() =>{
     if(inputData === "")
     axios({
