@@ -10,8 +10,10 @@ function Container() {
   const[inputData ,setInputData] = useState("");
   
 
-  {console.log(page)}
+  
   const handleSubmit =(event) =>{
+    {
+      console.log(page);}
     event.preventDefault();
     axios({
       method:"get",
@@ -26,7 +28,6 @@ function Container() {
     }).catch((error) =>{
       console.log(error);
     })
-    
   }
  
   useEffect(() =>{
